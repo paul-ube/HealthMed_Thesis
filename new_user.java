@@ -1,0 +1,559 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cms;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+/**
+ *
+ * @author Benjie
+ */
+public class new_user extends javax.swing.JFrame {
+
+    /**
+     * Creates new form new_user
+     */
+    public new_user() {
+        initComponents();
+    }
+    
+    public void save(){
+        
+        try{
+            
+            String a,b,c,d,e,f,g,h,i,j,k;
+            a = txt_id.getText();
+            b = txt_lname.getText();
+            c = txt_fname.getText();
+            d = txt_mname.getText();
+            e = txt_year.getText();
+            f = txt_email.getText();
+            g = txt_user.getText();
+            h = txt_pass.getText();
+            i = txt_confirm.getText();
+            j = txt_contact.getText();
+            k = txt_address.getText();
+            
+            String gender = "Male";
+            
+            if (radio_male.isSelected()){
+                gender = "Male";
+            }else if (radio_female.isSelected()){
+                gender = "Female";
+            }
+            
+            //// get birthday (YYYY-MM-dd) ////
+            String year = txt_year.getText();
+            int month = cmb_month.getSelectedIndex()+1;
+            int day = cmb_days.getSelectedIndex()+1;
+            
+            
+            
+            
+            
+            
+            if (a.isEmpty() || b.isEmpty() || c.isEmpty() || d.isEmpty() || e.isEmpty() || f.isEmpty() || g.isEmpty() || h.isEmpty() || i.isEmpty() || j.isEmpty() || k.isEmpty()){
+                JOptionPane.showMessageDialog(null,"Please fill out necessary information");
+            }else{
+                
+//                String sql = "INSERT INTO patient_tbl SET"
+//                        + " id_no = '"+a+"',"
+//                        + " lastname = '"+b+"',"
+//                        + " firstname = '"+c+"',"
+//                        + " middlename = '"+d+"',"
+//                        + " gender = '"+gender+"',"
+//                        + " "
+//                
+            }
+            
+            
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        
+        
+    }
+    
+    public void inputdates(){
+            Calendar cal = Calendar.getInstance();
+            String month = cmb_month.getSelectedItem().toString();
+            int  calMonth = 0;
+                        switch (month) {
+                                
+                            case "January":
+                                calMonth = Calendar.JANUARY;
+                                break;
+                            case "February":
+                                calMonth = Calendar.FEBRUARY;
+                                break;
+                            case "March":
+                                calMonth = Calendar.MARCH;
+                                break;
+                            case "April":
+                                calMonth = Calendar.APRIL;
+                                break;
+                            case "May":
+                                calMonth = Calendar.MAY;
+                                break;
+                            case "June":
+                                calMonth = Calendar.JUNE;
+                                break;
+                            case "July":
+                                calMonth = Calendar.JULY;
+                                break;
+                            case "August":
+                                calMonth = Calendar.AUGUST;
+                                break;
+                            case "September":
+                                calMonth = Calendar.SEPTEMBER;
+                                break;
+                            case "October":
+                                calMonth = Calendar.OCTOBER;
+                                break;
+                            case "November":
+                                calMonth = Calendar.NOVEMBER;
+                                break;
+                            case "December":
+                                calMonth = Calendar.DECEMBER;
+                                break;
+                        }
+                        cmb_days.removeAllItems();
+                        
+                        cal.set(Calendar.MONTH, calMonth);
+                        int min = cal.getActualMinimum(Calendar.DATE);
+                        int max = cal.getActualMaximum(Calendar.DATE);
+                        for (int day = min; day <= max; day++) {
+                            cmb_days.addItem(day);
+                        }
+        
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel82 = new javax.swing.JLabel();
+        txt_id = new javax.swing.JTextField();
+        txt_lname = new javax.swing.JTextField();
+        jLabel83 = new javax.swing.JLabel();
+        jLabel84 = new javax.swing.JLabel();
+        txt_mname = new javax.swing.JTextField();
+        txt_fname = new javax.swing.JTextField();
+        jLabel85 = new javax.swing.JLabel();
+        jLabel87 = new javax.swing.JLabel();
+        radio_male = new javax.swing.JRadioButton();
+        radio_female = new javax.swing.JRadioButton();
+        cmb_month = new javax.swing.JComboBox();
+        txt_year = new javax.swing.JTextField();
+        jLabel86 = new javax.swing.JLabel();
+        cmb_gender1 = new javax.swing.JComboBox();
+        jLabel45 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel88 = new javax.swing.JLabel();
+        jLabel89 = new javax.swing.JLabel();
+        txt_user = new javax.swing.JTextField();
+        jLabel90 = new javax.swing.JLabel();
+        jLabel91 = new javax.swing.JLabel();
+        txt_contact = new javax.swing.JTextField();
+        jLabel92 = new javax.swing.JLabel();
+        txt_email = new javax.swing.JTextField();
+        cmb_days = new javax.swing.JComboBox();
+        jLabel93 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txt_address = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        txt_pass = new javax.swing.JPasswordField();
+        txt_confirm = new javax.swing.JPasswordField();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
+
+        jLabel82.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel82.setForeground(new java.awt.Color(136, 137, 140));
+        jLabel82.setText("Employee Number");
+
+        txt_id.setEditable(false);
+        txt_id.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_id.setForeground(new java.awt.Color(46, 47, 51));
+
+        txt_lname.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_lname.setForeground(new java.awt.Color(46, 47, 51));
+
+        jLabel83.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel83.setForeground(new java.awt.Color(136, 137, 140));
+        jLabel83.setText("Last Name");
+
+        jLabel84.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel84.setForeground(new java.awt.Color(136, 137, 140));
+        jLabel84.setText("Middle Name");
+
+        txt_mname.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_mname.setForeground(new java.awt.Color(46, 47, 51));
+
+        txt_fname.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_fname.setForeground(new java.awt.Color(46, 47, 51));
+
+        jLabel85.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel85.setForeground(new java.awt.Color(136, 137, 140));
+        jLabel85.setText("First Name");
+
+        jLabel87.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel87.setForeground(new java.awt.Color(136, 137, 140));
+        jLabel87.setText("Date of Birth");
+
+        buttonGroup1.add(radio_male);
+        radio_male.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        radio_male.setForeground(new java.awt.Color(136, 137, 140));
+        radio_male.setSelected(true);
+        radio_male.setText("Male");
+
+        buttonGroup1.add(radio_female);
+        radio_female.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        radio_female.setForeground(new java.awt.Color(136, 137, 140));
+        radio_female.setText("Female");
+
+        cmb_month.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cmb_month.setForeground(new java.awt.Color(46, 47, 51));
+        cmb_month.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+        cmb_month.setPreferredSize(new java.awt.Dimension(56, 30));
+        cmb_month.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmb_monthItemStateChanged(evt);
+            }
+        });
+
+        txt_year.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_year.setForeground(new java.awt.Color(46, 47, 51));
+        txt_year.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_yearActionPerformed(evt);
+            }
+        });
+
+        jLabel86.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel86.setForeground(new java.awt.Color(136, 137, 140));
+        jLabel86.setText("Position");
+
+        cmb_gender1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cmb_gender1.setForeground(new java.awt.Color(46, 47, 51));
+        cmb_gender1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "User", "Admin" }));
+        cmb_gender1.setPreferredSize(new java.awt.Dimension(56, 30));
+        cmb_gender1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmb_gender1ItemStateChanged(evt);
+            }
+        });
+
+        jLabel45.setFont(new java.awt.Font("Arcon", 0, 30)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(10, 61, 115));
+        jLabel45.setText("Register");
+
+        jLabel88.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel88.setForeground(new java.awt.Color(136, 137, 140));
+        jLabel88.setText("Password");
+
+        jLabel89.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel89.setForeground(new java.awt.Color(136, 137, 140));
+        jLabel89.setText("Confirm Password");
+
+        txt_user.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_user.setForeground(new java.awt.Color(46, 47, 51));
+
+        jLabel90.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel90.setForeground(new java.awt.Color(136, 137, 140));
+        jLabel90.setText("Username");
+
+        jLabel91.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel91.setForeground(new java.awt.Color(136, 137, 140));
+        jLabel91.setText("Contact Number");
+
+        txt_contact.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_contact.setForeground(new java.awt.Color(46, 47, 51));
+
+        jLabel92.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel92.setForeground(new java.awt.Color(136, 137, 140));
+        jLabel92.setText("Email Address");
+
+        txt_email.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_email.setForeground(new java.awt.Color(46, 47, 51));
+
+        cmb_days.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cmb_days.setForeground(new java.awt.Color(46, 47, 51));
+        cmb_days.setPreferredSize(new java.awt.Dimension(56, 30));
+        cmb_days.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmb_daysItemStateChanged(evt);
+            }
+        });
+
+        jLabel93.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel93.setForeground(new java.awt.Color(136, 137, 140));
+        jLabel93.setText("Address");
+
+        txt_address.setColumns(20);
+        txt_address.setRows(3);
+        jScrollPane1.setViewportView(txt_address);
+
+        jButton1.setText("SAVE");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("CANCEL");
+
+        txt_pass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        txt_confirm.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jSeparator1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addComponent(jLabel45))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(118, 118, 118)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txt_mname)
+                                        .addComponent(jLabel84, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel82, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txt_id)
+                                        .addComponent(jLabel87, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txt_fname)
+                                        .addComponent(jLabel85, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txt_lname)
+                                        .addComponent(jLabel83, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(cmb_month, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(cmb_days, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(txt_year, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(radio_male, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(radio_female, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(jLabel92, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txt_email, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(180, 180, 180)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel93, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jLabel89, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+                                            .addComponent(jLabel88, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+                                            .addComponent(txt_user)
+                                            .addComponent(jLabel90, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+                                            .addComponent(txt_confirm))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txt_contact)
+                                            .addComponent(jLabel91, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)))
+                                    .addComponent(cmb_gender1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel86, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane1)
+                                    .addComponent(txt_pass)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 228, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel45)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel82)
+                    .addComponent(jLabel86))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmb_gender1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel83)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_lname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel85)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_fname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel84)
+                            .addComponent(jLabel89))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txt_mname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_confirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel90)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel88)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel87)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
+                            .addComponent(cmb_month, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cmb_days, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_year)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel91)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_contact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(radio_male)
+                            .addComponent(radio_female))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel92)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel93)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1)))
+                .addGap(52, 52, 52)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addContainerGap(57, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void cmb_monthItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmb_monthItemStateChanged
+        inputdates();
+    }//GEN-LAST:event_cmb_monthItemStateChanged
+
+    private void cmb_gender1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmb_gender1ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmb_gender1ItemStateChanged
+
+    private void txt_yearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_yearActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_yearActionPerformed
+
+    private void cmb_daysItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmb_daysItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmb_daysItemStateChanged
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        save();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        inputdates();
+    }//GEN-LAST:event_formWindowActivated
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+       
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new new_user().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JComboBox cmb_days;
+    private javax.swing.JComboBox cmb_gender1;
+    private javax.swing.JComboBox cmb_month;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
+    private javax.swing.JLabel jLabel84;
+    private javax.swing.JLabel jLabel85;
+    private javax.swing.JLabel jLabel86;
+    private javax.swing.JLabel jLabel87;
+    private javax.swing.JLabel jLabel88;
+    private javax.swing.JLabel jLabel89;
+    private javax.swing.JLabel jLabel90;
+    private javax.swing.JLabel jLabel91;
+    private javax.swing.JLabel jLabel92;
+    private javax.swing.JLabel jLabel93;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JRadioButton radio_female;
+    private javax.swing.JRadioButton radio_male;
+    private javax.swing.JTextArea txt_address;
+    private javax.swing.JPasswordField txt_confirm;
+    private javax.swing.JTextField txt_contact;
+    private javax.swing.JTextField txt_email;
+    private javax.swing.JTextField txt_fname;
+    private javax.swing.JTextField txt_id;
+    private javax.swing.JTextField txt_lname;
+    private javax.swing.JTextField txt_mname;
+    private javax.swing.JPasswordField txt_pass;
+    private javax.swing.JTextField txt_user;
+    private javax.swing.JTextField txt_year;
+    // End of variables declaration//GEN-END:variables
+}
